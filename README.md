@@ -79,3 +79,14 @@ index.html 코드 수정
 * 도커는 캐시에 일치하는 레이어가 있는지 확인하기 위해 해시값을 이용한다. 해시값은 Dockerfile 스크립트의 인스트럭션과 인스트럭션에 의해 복사되는 파일의 내용으로부터 계산되는데, 기존 이미지 레이어에
   해시값이 일치하는 것이 없다면 캐시 미스가 발생하고 해당 인스트럭션이 실행된다. 한 번 인스트럭션이 실행되면 그 다음에 오는 인스트럭션은 수정된 것이 없더라도 모두 실행된다.
   > 이러한 이유로 Dockerfile 스크립트의 인스트럭션은 잘 수정하지 않는 인스트럭션이 앞으로 오고 자주 수정되는 인스트럭션이 뒤에 오도록 배치돼야 한다. 이렇게 해야 캐시에 저장된 이미지 레이어를 되도록 많이 재사용할 수 있다.
+
+## 연습문제
+* Dockerfile 스크립트 없이 도커 이미지를 만들어보자. Dockerfile의 목적은 애플리케이션 배포를 자동화하는 것이다. 그러나 때로는 자동화 없이 수동으로 직접 해야 하거나, 스크립트로 작성할 수 없는 절차가 필요한 경우가 있다.
+```
+docker container run -it --name ch03lab diamol/ch03-lab
+echo Hyeonuk >> cho03.txt
+exit
+docker container commit ch03lab ch03-lab-soln
+docker container run ch03-lab-soln cat ch03.txt
+```
+
