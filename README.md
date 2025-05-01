@@ -135,4 +135,4 @@ docker container run -d -p 5000:5000 --restart always diamol/registry
 | `--restart always` | 시스템이 재부팅되거나 컨테이너가 꺼져도 **자동 재시작** |
 | `diamol/registry` | 사용할 **이미지 이름** (여기선 레지스트리 서버 이미지) |
 #
-
+* 골든 이미지 : 공식 이미지를 기반 이미지로 삼아 인증서나 환경 설정값 등 자신이 필요한 설정을 추가한 것.
