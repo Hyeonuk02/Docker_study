@@ -134,3 +134,5 @@ docker container run -d -p 5000:5000 --restart always diamol/registry
 | `-p 5000:5000` | **포트 매핑**: 로컬 컴퓨터의 `5000` 포트를 컨테이너의 `5000` 포트에 연결 |
 | `--restart always` | 시스템이 재부팅되거나 컨테이너가 꺼져도 **자동 재시작** |
 | `diamol/registry` | 사용할 **이미지 이름** (여기선 레지스트리 서버 이미지) |
+#
+
