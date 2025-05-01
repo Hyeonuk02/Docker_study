@@ -89,4 +89,12 @@ exit
 docker container commit ch03lab ch03-lab-soln
 docker container run ch03-lab-soln cat ch03.txt
 ```
+#
+
+## 4장. 애플리케이션 소스 코드에서 도커 이미지까지
+* RUN 인스트럭션은 빌드 중에 컨테이너 안에서 명령을 실행한 다음 그 결과를 이미지 레이어에 저장하는 기능을 한다.
+
+
+
+
 
