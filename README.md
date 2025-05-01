@@ -31,5 +31,18 @@ docker container ls
 * 도커 API는 표준 HTTP 기반 REST API다. 도커 엔진의 설정을 수정하면 이 API를 네트워크를 경유해 외부 컴퓨터로부터 호출할 수 없도록 차단하거나 허용할 수 있다.
 * 도커 명령행 인터페이스(도커 CLI)는 도커 API의 클라이언트다. (실제로 도커 API를 호출하는 것)
 
+## 연습문제
+* 앞서 실행해 봤던 웹 사이트 컨테이너를 실행하고 index.html 파일을 교체해 웹 페이지의 내용을 수정하는 것이다.
+```
+docker container run --detach --publish 8088:80 diamol/ch02-hello-diamol-web
+docker container ls // container ID 확인 (0f4ad828824b)
+docker exec -it 0f4ad828824b /bin/sh
+```
+컨테이너 안의 쉘 환경으로 접속후
+```
+cd /usr/local/apache2/htdocs
+vi index.html
+index.html 코드 수정
+```
   
 
