@@ -136,3 +136,19 @@ docker container run -d -p 5000:5000 --restart always diamol/registry
 | `diamol/registry` | 사용할 **이미지 이름** (여기선 레지스트리 서버 이미지) |
 #
 * 골든 이미지 : 공식 이미지를 기반 이미지로 삼아 인증서나 환경 설정값 등 자신이 필요한 설정을 추가한 것.
+#
+### 6장. 도커 볼륨을 이용한 퍼시스턴트 스토리지
+* 컨테이너의 디스크 역시 이 이미지 레이어를 순서대로 합쳐 만든 가상 파일 시스템이다.
+* 모든 컨테이너는 독립된 파일 시스템을 갖는다. 같은 이미지에서 실행한 여러 개의 컨테이너는 처음에는 디스크의 내용이 모두 같지만,
+  그중 한 컨테이너에서 애플리케이션이 파일을 수정해도 다른 컨테이너나 이미지는 영향을 받지 않는다.
+
+```
+docker container run --name rn1 diamol/ch06-random-number
+docker container run --name rn2 diamol/ch06-random-number
+
+docker container cp rn1:/random/number.txt number1.txt
+docker container cp rn2:/random/number.txt number2.txt
+
+cat number1.txt
+cat number2.txt
+```
